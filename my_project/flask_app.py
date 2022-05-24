@@ -14,8 +14,8 @@ def ratio(c, d):
 conn = psycopg2.connect(
         host="localhost",
         database="testare",
-        user="postgres",
-        password="Cu4sGr3cesc")
+        user="xxx",
+        password="xxx")
 
 app = Flask('Proiect')
 
