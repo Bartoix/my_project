@@ -1,0 +1,48 @@
+{% extends "aspect.html" %}
+{% block content %}
+
+<div class="container">
+     <img class="first" src="{{ url_for('static', filename='pics/gold.jpg') }}" alt="imagine cu gheata de aur">
+
+    <div class="top-left">
+    {% if atacant %}
+        <table class="aranjat" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <th>Nume</th>
+                <th>Tara</th>
+                <th>Goluri</th>
+                <th>Meciuri jucate</th>
+                <th>Goluri/meci</th>
+
+            </tr>
+
+
+            {% for a, s, d, f, g in atacant %}
+                <tr>
+                    <td>{{ s }}</td>
+                    <td>{{ g }}</td>
+                    <td>{{ d }}</td>
+                    <td>{{ f }}</td>
+                    <td>{{ gol_per_meci }}</td>
+                 </tr>
+            {% endfor %}
+
+        </table>
+
+        {% else %}
+            <div class="error">Acest index nu corespunde unia dintre primii 10 marcatori. Va rugam introduceti un index de la 1 la 10.</div>
+        {% endif %}
+        <br /><br />
+
+        <form action="/search" method="post">
+            <input type="text" name="nume" placeholder="cauta alt golgheter"><br>
+            <button class="buton" type="submit">Cauta</button>
+        </form>
+
+    </div>
+</div>
+<div>Imagine cu trofeul Gheata de Aur</div>
+<br />
+
+<a href="/golgheteri">Inapoi la golgheteri</a>
+{% endblock content %}

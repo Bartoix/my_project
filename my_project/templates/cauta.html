@@ -1,0 +1,29 @@
+{% extends "aspect.html" %}
+{% block content %}
+
+  {% if team %}
+    <div class="container">
+    <img src="{{ url_for('static', filename='pics/and_the.jpg') }}" height="550;" width="1350;" alt="imagine castigatorul este...">
+      <div class="top-left">
+        <div style="background: green;">Aceste echipe corespund cautarii dumneavoastra:
+          {% for k, v in team.items() %}
+          <ul>
+            <li><a style="font-size: 25px;" href="/echipa/{{ k }}">{{ v }}</a></li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container">
+     <img src="{{ url_for('static', filename='pics/nowin.jpg') }}" height="450;" width="500;" alt="imagine no winner">
+        <div class="top-left">
+          <div class="error">{{ nothing }}..</div><br>
+        </div>
+    </div>
+  {% endif %}
+
+  <a href="/castigatoare#win">Inapoi la echipe castigatoare</a>
+  <br />
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "aspect.html" %}
+{% block content %}
+
+  {% if tara %}
+    <div class="container">
+    <img src="{{ url_for('static', filename='pics/euro') }}" height="550;" width="1350;" alt="tari Europa">
+      <div class="top-left">
+        <div style="background: green;">Aceste tari corespund cautarii dumneavoastra:
+          {% for k, v in tara.items() %}
+          <ul>
+            <li><a style="font-size: 25px;" href="/tara/{{ k }}">{{ v }}</a></li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container">
+     <img class="first" src="{{ url_for('static', filename='pics/euro.jpg') }}" alt="imagine harta Europei">
+        <div class="top-left">
+          <div class="error">{{ nothing }}..</div><br>
+        </div>
+    </div>
+  {% endif %}
+
+  <a href="/castigatoare#win">Inapoi la echipe castigatoare</a>
+  <br />
+
+{% endblock content %}

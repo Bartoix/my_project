@@ -1,0 +1,53 @@
+{% extends "aspect.html" %}
+{% block content %}
+<div class="scris">In clasamentul UEFA Champions League, pentru  cei buni marcatori, nu e nici o surpriza sa gasim pe unii dintre cei
+    mai mari fotbalisti din istorie.Cand fostul mare jucator a lui
+    <a class="lnk" href="https://www.realmadrid.com/en" target="_new">Real Madrid</a>,
+    <a CLASS="lnk" href="https://en.wikipedia.org/wiki/Ra%C3%BAl_(footballer)" target="_new">Raul</a>,
+    s-a oprit la 71 de goluri marcate in competitie, multa lume a crezut ca acest record va dura o lunga perioada de timp.
+    Dar incepand de la jumatatea deceniului 2000-2010, o nou generatie de exceptie a aparut pe scena fotbalului.
+    Dintre acestia , 4 jucatori nu doar ca l-au ajuns pe Raul in clasamentul golgheterilor, dar l-au si depasit. De precizat a acesti 4
+    jucatori sunt inca in activitate si isi mai pot imbunatati recordurile. Desigur vorbim despre :
+    <a class="lnk" href="https://en.wikipedia.org/wiki/Karim_Benzema" target="_new">Karim Benzema</a>,
+    <a class="lnk" href="https://en.wikipedia.org/wiki/Robert_Lewandowski" target="_new">Robert Lewandoki</a>,
+    <a class="lnk" href="https://en.wikipedia.org/wiki/Lionel_Messi" target="_new">Lionel Messi</a>,
+    <a class="lnk" href="https://en.wikipedia.org/wiki/Cristiano_Ronaldo" target="_new">Cristiano Ronaldo</a>.<br/>
+    In continuare, puteti vedea tabelul cu cei mai buni 10 marcatori, din istoria UCL.<br/>
+    Pentru a vedea mai multe statistici despre jucatori, va rugam dati click pe numele lor.
+</div>
+<div class="container">
+     <img class="first" src="{{ url_for('static', filename='pics/bor.jpg') }}" alt="imagine cu balonul de aur">
+
+    <div class="top-left">
+
+    {% if marcator %}
+    <table class="aranjat" border="1" cellspacing="1">
+        <tr>
+            <th>Nume</th>
+            <th>Goluri</th>
+            <th>Tara</th>
+
+        </tr>
+
+
+        {% for a, s, d, f in marcator %}
+            <tr>
+                <td><a href="/golgheter/{{ a }}">{{ s }}</a></td>
+                <td>{{ d }}</td>
+                <td>{{ f }}</td>
+             </tr>
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+        <div class="error">Acest jucator nu este intre primii 10 marcatori</div>
+    {% endif %}
+
+    </div>
+</div>
+<div>Imagine cu Balonul  de aur</div>
+<br />
+
+<a href="/home">Inapoi home</a>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends "aspect.html" %}
+{% block content %}
+<h3>Pentru a ne putea contacta, va rugam inserati datele dumneavoastra si o scurta descriere a motivului pentru care ne contactati. Va multumim.</h3>
+
+<div class="container">
+    <img class="first" src="{{ url_for('static', filename='pics/contactati.jpg') }}" alt="imagine contact us">
+    <div class="top-left">
+        <form name="formular">
+            <table>
+                <td></td>
+                <tr>
+                    <td><input name="nume" type="text" placeholder="Nume/Prenume"></td>
+                </tr>
+                <td></td>
+
+                <tr>
+                    <td><input name="mail" type="email" placeholder="Email"></td>
+                </tr>
+                <td></td>
+                <tr>
+                    <td><input name="echipa" type="text" placeholder="Echipa Favorita"></td>
+                </tr>
+                <td></td>
+
+                <tr>
+                    <td><textarea name="mesaj" placeholder="Mesaj" rows="10"></textarea></td>
+                </tr>
+                <td></td>
+
+                <tr>
+                    <td><button class="buton" type="submit" onclick="alertare()">Trimite</button></td>
+                </tr>
+                <td></td>
+            </table>
+        </form>
+    </div>
+</div>
+<td><a href="/home">Inapoi Home</a></td>
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends "aspect.html" %}
+{% block content %}
+<div class="container">
+     <img class="first" src="{{ url_for('static', filename='pics/cl_teams.jpg') }}" alt="echipe participante 2022">
+
+    <div class="top-left">
+
+      Detalii echipa castigatoare: <br /><br />
+
+        {% if target %}
+        <table class="aranjat" border="1" cellspacing="0" cellpadding="5">
+
+            <tr>
+                <th>Echipa</th>
+                <th>din Tara</th>
+                <th>Anii castigarii</th>
+                <th>Numar trofee</th>
+            </tr>
+
+            <tr>
+                <td>{{ target[0][1] }}</td>
+                <td>{{ target[0][3] }}</td>
+                <td>
+                    {% for i in target %}
+                    {{ i[4] }}
+                    {% endfor %}
+                </td>
+                <td>{{ total }}</td>
+            </tr>
+        </table>
+        {% else %}
+          <div class="error">Nu avem echipa cu acest index. Pentru a afla o echipa castigatoare din 1992 pana in prezent, va rugam introduceti
+          un index de la 1 la 13</div>
+        {% endif %}
+         </div>
+    </div>
+<div>Imagine cu echipele calificate in grupele UCL, sezonul 2021/2022</div>
+
+  <br/>
+
+<a href="/castigatoare#win">Inapoi la echipe castigatoare</a>
+{% endblock content %}

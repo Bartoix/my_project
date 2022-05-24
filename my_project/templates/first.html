@@ -1,0 +1,51 @@
+{% extends "aspect.html" %}
+{% block content %}
+<table class="azure">
+    <tr>
+    <td>
+        <div>
+              <h1 id="top" class="center">UEFA CHAMPIONS LEAGUE</h1>
+              <br/><br/>
+              <h3 class="center">Cea mai importanta si spectaculoasa competitie fotbalistica din lume</h3>
+              <br>
+              <p class="scris">
+                  Este o competitie anuala de fotbal, organizata de <a class="lnk" href="https://www.uefa.com/" target="_new">UEFA</a>.
+                  <br/>
+                  Competitia este diputata de 32 de echipe din tarile Europei , care initial sunt impartite in 8 grupe de cate 4 echipe.
+                  <br/>
+                  Primele doua echipe din fiecare grupa se califica mai departe in fazele eliminatorii (sistem tur-retur).
+                  <br/>
+                  Pentru a ajunge in finala, echipele trebuie sa se impuna in optimi, sferturi si semifinala.
+                  <br/>
+                  Finala va fi disputata intre cele 2 echipe care au castigat partea lor de tablou. Finala este disputata pe teren neutru, intr-o singura mansa.
+                  <br/>
+                  Anul acesta Finala se va disputa la
+                  <a class="lnk" href="https://en.wikipedia.org/wiki/Paris" target="_new">Paris</a>,
+                  pe stadionul <a class="lnk" href="https://www.stadefrance.com/en" target="_new">Stade de France</a>.
+                  <br/>
+                  In 28 mai se vor infrunta 2 dintre cele mai mari echipe de fotbal din lume:
+                  <a class="lnk" href="https://www.realmadrid.com/en" target="_new">Real Madrid</a> si
+                  <a class="lnk" href="https://www.liverpoolfc.com/" target="_new">FC Liverpool</a>
+                  <br/>
+                  Real Madrid s-a calificat surprinzator anul acesta, invingand cateva din marile favorite ale competitiei:
+                  <a CLASS="lnk" HREF="https://en.psg.fr/" target="_new">PSG</a> in optimi,
+                  detinatorii trofeului <a class="lnk" href="https://www.chelseafc.com/en" target="_new">FC Chelsea</a> in sferturi
+                  si masinaria de fotbal a lui <a class="lnk" href="https://en.wikipedia.org/wiki/Pep_Guardiola" target="_new">Pep Guardiola</a>,
+                  <a class="lnk" href="https://www.mancity.com/" target="_new">Manchester City</a> in semifinale.
+                  <br/>
+                  La randul ei, FC Liverpool a eliminat pe <a class="lnk" href="https://www.inter.it/en" target="_new">Inter Milano</a> in optimi,
+                  <a class="lnk" href="https://www.slbenfica.pt/en-us" target="_new">Benfica Lisabona</a> in sferturi si
+                  <a class="lnk" href="https://www.villarrealcf.es/en/" target="_new">FC Villarreal</a> in semifinale.
+              </p>
+        </div>
+    </td>
+
+    <td>
+        <img src="{{ url_for('static', filename='pics/stadion1.jpg') }}" alt="imagine stadion UCL">
+    </td>
+    </tr>
+
+</table>
+
+<a href="#top">Inapoi sus</a>
+{% endblock content %}

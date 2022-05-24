@@ -1,0 +1,77 @@
+{% extends "aspect.html" %}
+{% block content %}
+
+<table class="azure">
+    <tr>
+        <td>
+            <p class="scris1">Din 1992, doar 13 echipe au castigat trofeul. Cu mici exceptii, castigatoarele
+                au venit din cele mai mari 4 campionate europene :
+            </p>
+                <ul class="scris1">
+                    <li><a href="https://www.premierleague.com/home" target="_new">Premier League</a>
+                        <img class="flag" src="{{ url_for('static', filename='pics/england.jpg') }}" title="steag Anglia">
+                    </li>
+                    <li><a href="https://www.legaseriea.it/en/" target="_new">Serie A</a>
+                        <img class="flag" src="{{ url_for('static', filename='pics/italy.jpg') }}" title="steag Italia">
+                    </li>
+                    <li><a href="https://www.laliga.com/" target="_new">La Liga</a>
+                        <img class="flag" src="{{ url_for('static', filename='pics/spain.jpg') }}" title="steag Spania">
+                    </li>
+                    <li><a href="https://www.bundesliga.com/en/bundesliga" target="_new">Bundesliga</a>
+                        <img class="flag" src="{{ url_for('static', filename='pics/germany.jpg') }}" title="steag Germania">
+                    </li>
+                </ul>
+            <p class="scris1">
+                Dominatia acestor mari campionate, este astfel aproape totala. Dupa cum veti putea observa in tabelul
+                de mai jos mai multe echipe din aceste 4 campionate si-au adjudecat trofeul.
+            </p>
+        </td>
+        <td><img src="{{ url_for('static', filename='pics/trofeu.jpg') }}" alt="Trofeul UCL" width="600;"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><p>Imagine cu trofeul Uefa Champions League</p></td>
+    </tr>
+</table>
+
+<form action="/cauta" method="post">
+    <input type="text" name="name" placeholder="Introdu numele echipei"><br>
+    <button class="buton" type="submit">Cauta</button>
+</form>
+<br/>
+
+<h3 id="win">Lista cu campioanele UCL din 1992 pana in prezent:</h3>
+
+<div class="container">
+     <img class="first" src="{{ url_for('static', filename='pics/juve.jpg') }}" alt="imagine cu Juventus campioana">
+
+    <div class="top-left">
+
+        <table class="aranjat" border="1" cellspacing="0">
+            <tr>
+                <th>Echipa castigatoare</th>
+                <th>Tara echipei</th>
+                <th>Anul castigarii</th>
+
+            </tr>
+            <br />
+
+            {% for eid, ename, tid, tname, an in tabel %}
+                <tr>
+                    <td><a href="/echipa/{{ eid }}">{{ ename }}</a></td>
+                    <td><a href="/tara/{{ tid }}">{{ tname }}</a></td>
+                    <td>{{ an }}</td>
+                </tr>
+            {% else %}
+
+                <div class="error">{{ nothing }}</div>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+<div>Imagine cu Gianluca Vialli, capitanul lui Juventus Torino, ridicand trofeul in 1996</div>
+
+<br />
+<a href="/home">Inapoi Home</a>
+{% endblock content %}

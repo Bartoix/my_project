@@ -1,0 +1,85 @@
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: white;
+}
+
+table.prim {
+    width: 100%;
+    background: LawnGreen;
+}
+
+.one {
+    text-align: center;
+    height: 70px;
+}
+
+
+.yolo {
+    text-align: right;
+}
+
+
+.first {
+    width: 85%;
+    height: 80%;
+}
+
+
+.scris {
+    text-align: left;
+    font-size: 30px;
+    color: black;
+    background: azure;
+}
+
+
+.lnk {
+    color: red;
+}
+
+
+.scris1 {
+    text-align: left;
+    font-size: 30px;
+    color: black;
+}
+
+.buton {
+    background: blue;
+    color: white;
+    width:175px;
+}
+
+.error {
+    font-size: 20px;
+    color: red;
+    background: white;
+}
+
+.aranjat {
+    background:white;
+    color: black;
+}
+
+.flag {
+    height: 30px;
+    width: 50px;
+}
+
+.azure {
+    background: azure;
+}
+
+.center {
+    text-align: center;
+}

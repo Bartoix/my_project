@@ -1,0 +1,40 @@
+{% extends "aspect.html" %}
+{% block content %}
+<div class="container">
+     <img class="first" src="{{ url_for('static', filename='pics/euro.jpg') }}" alt="imagine cu harta Europei">
+
+    <div class="top-left">
+        {% if pays %}
+
+        <p style="color: yellow;" class="scris1">Din 1992, echipele castigatoare din <b>{{ tara }}</b><br />
+                au adunat un total de <b>{{ val }}</b> trofee.<br />
+                Echipele castigatoare din {{ tara }} sunt:</p><br />
+
+            <table class="aranjat" border="1" cellspacing="0" cellpadding="5">
+                <tr>
+                    <th>Echipe</th>
+                </tr>
+                <br />
+                {% for eid, ename, tid, tname in pays %}
+                    <tr>
+                        <td><a href="/echipa/{{ eid }}">{{ ename }}</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class="error">Nu s-a gasit nici o tara, a carei echipe, sa fi castigat UCL</div>
+        {% endif %}
+
+    <br/><br/>
+    <form action="/cautari" method="get">
+        <input type="text" name="nom" placeholder="Cauta alta tara"><br>
+        <button class="buton" type="submit">Cauta</button>
+    </form>
+
+    </div>
+</div>
+<div>Imagine a Europei cu steagurile tarilor</div>
+<br/>
+<a href="/castigatoare#win">Inapoi la echipe castigatoare</a>
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Champions League</title>
+    <table class="prim">
+        <tr>
+            <td><img src="{{ url_for('static', filename='pics/stadion.jpg') }}" height="70px;" title="Logo UCL"></td>
+
+            <td><img class="one" src="{{ url_for('static', filename='pics/trophy1.jpg') }}" title="Trofeul UCL"></td>
+
+            <td><img class="one" src="{{ url_for('static', filename='pics/uefa.jpg') }}" title="Logo UEFA"></td>
+
+            <td><img class="one" src="{{ url_for('static', filename='pics/ball1.jpg') }}" title="Mingea oficiala Adidas"></td>
+
+            <td class="yolo">
+                <a href="/home">Home</a>&emsp;
+                <a href="/istoric">Istoric</a>&emsp;
+                <a href="/castigatoare">Castigatoarele CL</a>&emsp;
+                <a href="/golgheteri">Golgheteri</a>&emsp;
+                <a href="/contact">Contact</a>&emsp;
+            </td>
+
+        </tr>
+    </table>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tpl.css') }}">
+    <script src="{{ url_for('static', filename='jscript/cont.js') }}"></script>
+    <hr />
+</head>
+<body>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
+
