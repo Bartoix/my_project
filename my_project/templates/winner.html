@@ -31,6 +31,13 @@
         {% else %}
           <div class="error">Nu avem echipa cu acest index. Pentru a afla o echipa castigatoare din 1992 pana in prezent, va rugam introduceti
           un index de la 1 la 13</div>
+          <br/>
+
+            <form action="/cauta" method="post">
+                <input type="text" name="name" placeholder="Introdu numele echipei"><br>
+                <button class="buton" type="submit">Cauta</button>
+            </form>
+
         {% endif %}
          </div>
     </div>

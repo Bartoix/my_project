@@ -7,15 +7,15 @@ def initializare_conexiune():
     return psycopg2.connect(
         host="localhost",
         database="testare",
-        user="xxx",
-        password="xxx")
+        user="postgres",
+        password="Cu4sGr3cesc")
 
 
 def reset_sql():
     """Pentru ca vrem sa creem tabelele de la zero in SQL"""
     with conn:
         c = conn.cursor()
-        query = 'drop table golgheteri, anul_castigarii, echipe, tari;'
+        query = 'drop table if exists golgheteri, anul_castigarii, echipe, tari;'
         c.execute(query)
         c.close()
 

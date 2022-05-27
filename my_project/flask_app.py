@@ -14,8 +14,8 @@ def ratio(c, d):
 conn = psycopg2.connect(
         host="localhost",
         database="testare",
-        user="xxx",
-        password="xxx")
+        user="postgres",
+        password="Cu4sGr3cesc")
 
 app = Flask('Proiect')
 
@@ -74,7 +74,7 @@ def echipa(echipa_id):
     return render_template('winner.html', target=target, total=total)
 
 
-@app.route('/tara/<tara_id>')
+@app.route('/tara/<int:tara_id>')
 def country(tara_id):
     """Selectia din SQL pentru link-ul catre tara din care provine echipa si numarul de trofee per tara"""
 
@@ -123,7 +123,7 @@ def scorer():
     return render_template('goool.html', marcator=scorers)
 
 
-@app.route('/golgheter/<golgheter_id>')
+@app.route('/golgheter/<int:golgheter_id>')
 def a_marca(golgheter_id):
     """Selectia din SQL pentru link-ul catre golgheter"""
 
@@ -147,7 +147,7 @@ def a_marca(golgheter_id):
 
 @app.route('/cauta', methods=['GET', 'POST'])
 def search():
-    """Pentru a defini cautarea din pagina Cstigatoarele"""
+    """Pentru a defini cautarea din pagina Castigatoarele"""
 
     if request.method == 'POST':
         srch = request.form
@@ -234,20 +234,23 @@ def find():
         if name in este:
             dis[i[0]] = i[1]
         else:
-            nott = 'Nu s-a gasit nici o tara, a caror echipe sa fi castigat UCL '
+            nott = 'Nu s-a gasit nici o tara, a carei echipe sa fi castigat UCL '
 
     return render_template('find.html', tara=dis, nothing=nott)
 
 
 @app.route('/contact')
 def con():
+    """Pentru a defini pagina de contact"""
+
     return render_template('form_incercari.html')
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(r):
     """Pentru a prinde rute inexistente"""
-    return render_template('catch_errors'), 404
+
+    return render_template('catch_errors.html'), 404
 
 
 if __name__ == '__main__':

@@ -19,7 +19,13 @@
      <img src="{{ url_for('static', filename='pics/nowin.jpg') }}" height="450;" width="500;" alt="imagine no winner">
         <div class="top-left">
           <div class="error">{{ nothing }}..</div><br>
+          <br/>
+        <form action="/cauta" method="post">
+          <input type="text" name="name" placeholder="Introdu numele echipei"><br>
+          <button class="buton" type="submit">Cauta</button>
+        </form>
         </div>
+
     </div>
   {% endif %}
 

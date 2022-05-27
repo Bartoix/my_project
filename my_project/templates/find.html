@@ -3,7 +3,7 @@
 
   {% if tara %}
     <div class="container">
-    <img src="{{ url_for('static', filename='pics/euro') }}" height="550;" width="1350;" alt="tari Europa">
+    <img class="first" src="{{ url_for('static', filename='pics/euro.jpg') }}" alt="tari Europa">
       <div class="top-left">
         <div style="background: green;">Aceste tari corespund cautarii dumneavoastra:
           {% for k, v in tara.items() %}
@@ -19,6 +19,11 @@
      <img class="first" src="{{ url_for('static', filename='pics/euro.jpg') }}" alt="imagine harta Europei">
         <div class="top-left">
           <div class="error">{{ nothing }}..</div><br>
+          <br/>
+          <form action="/cautari" method="get">
+            <input type="text" name="nom" placeholder="Cauta alta tara"><br>
+            <button class="buton" type="submit">Cauta</button>
+          </form>
         </div>
     </div>
   {% endif %}
